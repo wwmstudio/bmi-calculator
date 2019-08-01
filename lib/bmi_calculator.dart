@@ -31,21 +31,30 @@ class BmiCalculator {
 
   Map getResult() {
     List found = [];
-
-    if (age >= 20) {
-      found = chartAbove20.where((elem) {
-        return elem['min'] <= bmi && elem['max'] >= bmi;
-      });
-    } else {
-      found = chartBelow20.where((elem) {
-        return elem['min'] <= bmi && elem['max'] >= bmi;
-      });
-    }
-    if (found.length > 0) {
-      found[0]['bmi'] = bmi;
-      return found[0];
-    }
-    return {'bmi': 0, 'status': 'NOT FOUND'};
+    Map foundNormal;
+    try {
+      if (age >= 20) {
+        found = chartAbove20.where((elem) {
+          return elem['min'] <= bmi && elem['max'] >= bmi;
+        }).toList();
+        foundNormal = chartAbove20.where((elem) {
+          return elem['indicator'] == 'success';
+        }).toList()[0];
+      } else {
+        found = chartBelow20.where((elem) {
+          return elem['min'] <= bmi && elem['max'] >= bmi;
+        }).toList();
+        foundNormal = chartBelow20.where((elem) {
+          return elem['indicator'] == 'success';
+        }).toList()[0];
+      }
+      if (found.length > 0) {
+        found[0]['bmi'] = bmi;
+        found[0]['normal'] = foundNormal;
+        return found[0];
+      }
+    } catch (e) {}
+    return null;
   }
 
   List chartAbove20 = [
@@ -54,7 +63,7 @@ class BmiCalculator {
       'max': 14.9,
       'status': 'VERY SEVERELY UNDERWEIGHT',
       'message':
-          'You are very severely underweight. Please consult yuor doctor!',
+          'You are very severely underweight. Please consult your doctor!',
       'indicator': 'warning',
     },
     {
@@ -83,7 +92,7 @@ class BmiCalculator {
       'min': 25.1,
       'max': 30.0,
       'status': 'OVERWEIGHT',
-      'message': 'You are overweight. Revice your diet!',
+      'message': 'You are overweight. Revise your diet!',
       'indicator': 'warning',
     },
     {
@@ -106,7 +115,7 @@ class BmiCalculator {
       'min': 40.1,
       'max': double.infinity,
       'status': 'VERY SEVERELY OBESE',
-      'message': 'You are very severely obese. Please consult yuor doctor!',
+      'message': 'You are very severely obese. Please consult your doctor!',
       'indicator': 'danger',
     }
   ];
@@ -117,7 +126,7 @@ class BmiCalculator {
       'max': 14.9,
       'status': 'VERY SEVERELY UNDERWEIGHT',
       'message':
-          'You are very severely underweight. Please consult yuor doctor!',
+          'You are very severely underweight. Please consult your doctor!',
       'indicator': 'warning',
     },
     {
@@ -146,7 +155,7 @@ class BmiCalculator {
       'min': 25.1,
       'max': 30.0,
       'status': 'OVERWEIGHT',
-      'message': 'You are overweight. Revice your diet!',
+      'message': 'You are overweight. Revise your diet!',
       'indicator': 'warning',
     },
     {
@@ -169,7 +178,7 @@ class BmiCalculator {
       'min': 40.1,
       'max': double.infinity,
       'status': 'VERY SEVERELY OBESE',
-      'message': 'You are very severely obese. Please consult yuor doctor!',
+      'message': 'You are very severely obese. Please consult your doctor!',
       'indicator': 'danger',
     }
   ];

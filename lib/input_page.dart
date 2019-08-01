@@ -73,7 +73,10 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             BottomButton(
-              onClick: () => Navigator.pushReplacementNamed(context, '/result'),
+              onClick: () {
+                inputBloc.calculateBMI();
+                Navigator.pushReplacementNamed(context, '/result');
+              },
               text: 'CALCULATE',
             ),
           ],

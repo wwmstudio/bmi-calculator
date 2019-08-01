@@ -1,4 +1,4 @@
-package com.wwmstudio.apps.bmi_calculater;
+package com.wwmstudio.apps.bmi_calculator;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

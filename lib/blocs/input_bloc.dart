@@ -64,11 +64,19 @@ class InputBloc extends ChangeNotifier {
   }
 
   calculateBMI() {
-    Map result = BmiCalculator(
+    result = BmiCalculator(
       age: age,
       gender: gender,
       height: height,
       weight: weight,
     ).getResult();
+  }
+
+  resetAll() {
+    gender = GENDER.MALE;
+    height = (kMinHeight + ((kMaxHeight - kMinHeight) / 2)).toInt();
+    weight = 65;
+    age = 20;
+    result = null;
   }
 }

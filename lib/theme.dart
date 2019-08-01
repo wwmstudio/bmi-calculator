@@ -7,6 +7,8 @@ const kAccentColor = Color(0xFFEA1556);
 const kActiveTextColor = Color(0xFFFFFFFF);
 const kInactiveTextColor = Color(0xFF8C8D98);
 const kSuccessColor = Color(0xFF37BF7D);
+const kWarningColor = Color(0xFFFBBC05);
+const kDangerColor = Color(0xFFCB2431);
 
 ThemeData kAppTheme = ThemeData.dark().copyWith(
   primaryColor: kPrimaryColor,
@@ -30,7 +32,7 @@ const kSuccessTextStyle = TextStyle(
 );
 
 const kDisplay1ActiveTextStyle = TextStyle(
-  fontSize: 120.0,
+  fontSize: 140.0,
   color: kActiveTextColor,
   fontWeight: FontWeight.w900,
 );
