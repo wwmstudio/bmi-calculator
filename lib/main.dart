@@ -24,8 +24,8 @@ class BMIApp extends StatelessWidget {
         routes: {
           '/': (context) => InputPage(),
           '/result': (context) => ResultPage(),
-          '/home': (context) => InputPage()
         },
+        initialRoute: '/',
       ),
     );
   }

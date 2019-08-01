@@ -39,7 +39,7 @@ class CounterCard extends StatelessWidget {
             children: <Widget>[
               Text(
                 value.toString(),
-                style: kH1ActiveTextStyle,
+                style: kDisplay2ActiveTextStyle,
               ),
               Text(
                 unit,

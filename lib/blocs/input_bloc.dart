@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../bmi_calculator.dart';
 import '../constants.dart';
-
-enum GENDER { MALE, FEMALE }
 
 class InputBloc extends ChangeNotifier {
   GENDER _gender = GENDER.MALE;
@@ -55,5 +54,21 @@ class InputBloc extends ChangeNotifier {
     if (age < kMaxAge) {
       age++;
     }
+  }
+
+  Map _result;
+  Map get result => _result;
+  set result(Map value) {
+    _result = value;
+    notifyListeners();
+  }
+
+  calculateBMI() {
+    Map result = BmiCalculator(
+      age: age,
+      gender: gender,
+      height: height,
+      weight: weight,
+    ).getResult();
   }
 }

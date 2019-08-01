@@ -40,7 +40,7 @@ class SliderCard extends StatelessWidget {
             children: <Widget>[
               Text(
                 showDecimal ? value.toString() : value.toInt().toString(),
-                style: kH1ActiveTextStyle,
+                style: kDisplay2ActiveTextStyle,
               ),
               Text(
                 unit,

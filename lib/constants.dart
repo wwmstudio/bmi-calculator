@@ -1,3 +1,5 @@
+enum GENDER { MALE, FEMALE }
+const kAppName = 'BMI CALCULATOR';
 const kLargeIconSize = 80.0;
 const kCommonMargin = 8.0;
 const kButtonHeight = 80.0;

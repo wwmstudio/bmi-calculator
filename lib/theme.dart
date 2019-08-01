@@ -6,6 +6,7 @@ const kTernaryColor = Color(0xFF1D1F33);
 const kAccentColor = Color(0xFFEA1556);
 const kActiveTextColor = Color(0xFFFFFFFF);
 const kInactiveTextColor = Color(0xFF8C8D98);
+const kSuccessColor = Color(0xFF37BF7D);
 
 ThemeData kAppTheme = ThemeData.dark().copyWith(
   primaryColor: kPrimaryColor,
@@ -22,8 +23,36 @@ const kActiveLabelStyle = TextStyle(
   color: kActiveTextColor,
 );
 
-const kH1ActiveTextStyle = TextStyle(
-    fontSize: 50.0, color: kActiveTextColor, fontWeight: FontWeight.w900);
+const kSuccessTextStyle = TextStyle(
+  fontSize: 18.0,
+  color: kSuccessColor,
+  fontWeight: FontWeight.w900,
+);
 
-TextStyle kButtonTextStyle =
-    kActiveLabelStyle.copyWith(fontWeight: FontWeight.bold);
+const kDisplay1ActiveTextStyle = TextStyle(
+  fontSize: 120.0,
+  color: kActiveTextColor,
+  fontWeight: FontWeight.w900,
+);
+
+const kDisplay2ActiveTextStyle = TextStyle(
+  fontSize: 50.0,
+  color: kActiveTextColor,
+  fontWeight: FontWeight.w900,
+);
+
+const kDisplay3ActiveTextStyle = TextStyle(
+  fontSize: 50.0,
+  color: kActiveTextColor,
+  fontWeight: FontWeight.w900,
+);
+
+const kH1ActiveTextStyle = TextStyle(
+  fontSize: 30.0,
+  color: kActiveTextColor,
+  fontWeight: FontWeight.w600,
+);
+
+TextStyle kButtonTextStyle = kActiveLabelStyle.copyWith(
+  fontWeight: FontWeight.bold,
+);

@@ -3,12 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 import 'blocs/input_bloc.dart';
+import 'bottom_button.dart';
 import 'card_button.dart';
 import 'constants.dart';
 import 'counter_card.dart';
-import 'rounded_card.dart';
 import 'slider_card.dart';
-import 'theme.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -21,7 +20,7 @@ class _InputPageState extends State<InputPage> {
     final InputBloc inputBloc = Provider.of<InputBloc>(context);
     return Scaffold(
         appBar: AppBar(
-          title: Text('BMI Calculater'),
+          title: Text(kAppName),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -73,17 +72,9 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            Container(
-              color: kAccentColor,
-              child: Center(
-                child: Text(
-                  'CALCULATE',
-                  style: kButtonTextStyle,
-                ),
-              ),
-              width: double.infinity,
-              height: kButtonHeight,
-              margin: EdgeInsets.only(top: kCommonMargin),
+            BottomButton(
+              onClick: () => Navigator.pushReplacementNamed(context, '/result'),
+              text: 'CALCULATE',
             ),
           ],
         ));
