@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:holding_gesture/holding_gesture.dart';
 
 import 'constants.dart';
 import 'theme.dart';
@@ -14,16 +15,20 @@ class RoundedIconButton extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      onPressed: onPressed,
-      shape: CircleBorder(),
-      constraints: BoxConstraints.tightFor(
-        width: kRoundedIconButtonSize,
-        height: kRoundedIconButtonSize,
+    return HoldDetector(
+      onHold: onPressed,
+      holdTimeout: Duration(milliseconds: 100),
+      child: RawMaterialButton(
+        child: Icon(icon),
+        onPressed: onPressed,
+        shape: CircleBorder(),
+        constraints: BoxConstraints.tightFor(
+          width: kRoundedIconButtonSize,
+          height: kRoundedIconButtonSize,
+        ),
+        fillColor: kTernaryColor,
+        splashColor: kSecondaryColor,
       ),
-      fillColor: kTernaryColor,
-      splashColor: kSecondaryColor,
     );
   }
 }

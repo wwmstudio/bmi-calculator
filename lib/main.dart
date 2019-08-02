@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'blocs/input_bloc.dart';
@@ -6,7 +7,15 @@ import 'input_page.dart';
 import 'result_page.dart';
 import 'theme.dart';
 
-void main() => runApp(BMIApp());
+void main() {
+  setPortraitOrientation();
+  runApp(BMIApp());
+}
+
+setPortraitOrientation() async {
+  await SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+}
 
 class BMIApp extends StatelessWidget {
   @override
