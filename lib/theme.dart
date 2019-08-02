@@ -13,6 +13,7 @@ const kDangerColor = Color(0xFFCB2431);
 ThemeData kAppTheme = ThemeData.dark().copyWith(
   primaryColor: kPrimaryColor,
   scaffoldBackgroundColor: kPrimaryColor,
+  accentColor: kAccentColor,
 );
 
 const kLabelStyle = TextStyle(

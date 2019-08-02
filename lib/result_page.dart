@@ -36,8 +36,23 @@ class ResultPage extends StatelessWidget {
           RoundedCard(
             margin: kCommonMargin * 3,
             child: inputBloc.result == null
-                ? Center(
-                    child: CircularProgressIndicator(),
+                ? Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      CircularProgressIndicator(),
+                      SizedBox(
+                        height: kCommonMargin * 4,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Loding...',
+                            style: kLabelStyle,
+                          ),
+                        ],
+                      ),
+                    ],
                   )
                 : Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
