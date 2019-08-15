@@ -1,10 +1,18 @@
+#
+# Copyright © 2012-2019 wwmstudio. All rights reserved.
+#
+# This software is produced by wwmstudio.
+# Unauthorized redistribution, reproduction, or usage of
+# this software in whole or in part without the express
+# written consent of wwmstudio.com is strictly prohibited.
+#
 name: bmi_calculator
-description: A new Flutter application.
+description: A new Flutter project.
 
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.1.0 <3.0.0'
 
 dependencies:
   flutter:
@@ -18,7 +26,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons:
 
 flutter:
-
   uses-material-design: true
+
+flutter_icons:
+  android: 'launcher_icon'
+  ios: true
+  image_path: 'assets/icon/icon.png'
+  adaptive_icon_background: '#EA1556'
+  adaptive_icon_foreground: 'assets/icon/icon-foreground.png'

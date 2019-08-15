@@ -6,4 +6,5 @@
     <color name="accent">#EA1556</color>
     <color name="activeText">#FFFFFF</color>
     <color name="inactiveText">#8C8D98</color>
+    <color name="ic_launcher_background">#EA1556</color>
 </resources>
